@@ -1,8 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { nanoid } from "nanoid";
 
 const initialState = {
-  users: [],
   currentUser: null,
   error: null,
   loading: false,
@@ -12,45 +10,6 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    createUser: {
-      reducer(state, action) {
-        state.users.push(action.payload);
-      },
-      prepare(userData) {
-        const id = nanoid();
-        return {
-          payload: {
-            id,
-            ...userData,
-          },
-        };
-      },
-    },
-    updateUser: (state, action) => {
-      const { id, firstname, lastname, email, password } = action.payload;
-      const user = state.users.find((user) => user.id === id);
-      if (user) {
-        user.firstname = firstname;
-        user.lastname = lastname;
-        user.email = email;
-        user.password = password;
-      }
-    },
-    deleteUser: (state, action) => {
-      state.users = state.users.filter((user) => user.id !== action.payload);
-    },
-    signUpStart: (state) => {
-      state.loading = true;
-      state.error = null;
-    },
-    signUpSuccess: (state) => {
-      state.loading = false;
-      state.error = null;
-    },
-    signUpFailure: (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
-    },
     signInStart: (state) => {
       state.loading = true;
       state.error = null;
@@ -99,12 +58,6 @@ const userSlice = createSlice({
 });
 
 export const {
-  createUser,
-  updateUser,
-  deleteUser,
-  signUpStart,
-  signUpSuccess,
-  signUpFailure,
   signInStart,
   signInSuccess,
   signInFailure,
@@ -116,7 +69,4 @@ export const {
   deleteUserFailure,
   signoutSuccess,
 } = userSlice.actions;
-
-export const selectUsers = (state) => state.user.users;
-
 export default userSlice.reducer;

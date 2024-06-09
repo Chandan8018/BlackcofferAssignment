@@ -6,7 +6,7 @@ export const Word = [
     text: "with",
   },
   {
-    text: "Blackcoffer™.",
+    text: "ElectricBills'™.",
     className: "text-blue-500 dark:text-blue-500",
   },
 ];
@@ -25,7 +25,7 @@ export const update = [
 
 export const home = [
   {
-    text: "Blackcoffer.",
+    text: "Welcome to",
     className: "text-blue-500 dark:text-blue-500",
   },
 ];

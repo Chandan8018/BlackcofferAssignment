@@ -7,59 +7,63 @@ import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 import { Word } from "../data/data";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import {
-  signUpStart,
-  signUpSuccess,
-  signUpFailure,
-  createUser,
-} from "../redux/user/userSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Alert, Spinner } from "flowbite-react";
+import OAuth from "../components/googleConfig/OAuth";
 
 function SignUp() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.theme);
-  const userState = useSelector((state) => state.user);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({});
-
-  const { loading, error: errorMessage } = userState || {
-    loading: false,
-    error: null,
-  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (
-      !formData.firstname ||
-      !formData.lastname ||
+      !formData.username ||
       !formData.email ||
       !formData.password ||
       !formData.confirmpassword
     ) {
-      return dispatch(signUpFailure("Please fill out all fields"));
+      return setErrorMessage("Please fill out all fields");
     }
     if (formData.password !== formData.confirmpassword) {
-      return dispatch(signUpFailure("Passwords do not match"));
+      return setErrorMessage("Passwords do not match");
     }
     try {
-      dispatch(signUpStart());
-      dispatch(createUser(formData));
-      dispatch(signUpSuccess());
-      setFormData({});
-      navigate("/sign-in");
+      setLoading(true);
+
+      setErrorMessage(null);
+
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success === false) {
+        setErrorMessage(data.message);
+      }
+
+      setLoading(false);
+
+      if (res.ok) {
+        navigate("/sign-in");
+      }
     } catch (error) {
-      dispatch(signUpFailure("Failed to sign up"));
-      console.log(error);
+      setErrorMessage(error.message);
+      setLoading(false);
     }
   };
-
   return (
-    <div className='h-[50rem] w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex justify-center items-center'>
+    <div className='py-12 w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex justify-center items-center'>
       {/* Spot Light */}
       <Spotlight
         className='-top-40 left-0 md:left-60 md:-top-20 z-10'
@@ -80,27 +84,17 @@ function SignUp() {
             {errorMessage}
           </Alert>
         )}
-        <form className='my-8' onSubmit={handleSubmit}>
-          <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4'>
-            <LabelInputContainer>
-              <Label htmlFor='firstname'>First name</Label>
-              <Input
-                id='firstname'
-                placeholder='Tyler'
-                type='text'
-                onChange={handleChange}
-              />
-            </LabelInputContainer>
-            <LabelInputContainer>
-              <Label htmlFor='lastname'>Last name</Label>
-              <Input
-                id='lastname'
-                placeholder='Durden'
-                type='text'
-                onChange={handleChange}
-              />
-            </LabelInputContainer>
-          </div>
+        <form className='mt-4' onSubmit={handleSubmit}>
+          <LabelInputContainer>
+            <Label htmlFor='username'>First name</Label>
+            <Input
+              id='username'
+              placeholder='chandan123'
+              type='text'
+              onChange={handleChange}
+            />
+          </LabelInputContainer>
+
           <LabelInputContainer className='mb-4'>
             <Label htmlFor='email'>Email Address</Label>
             <Input
@@ -131,7 +125,7 @@ function SignUp() {
 
           <Button
             borderRadius='1.75rem'
-            className='bg-gray-600 dark:bg-slate-400 text-white dark:text-black border-neutral-200 dark:border-slate-800 w-full text-md font-semibold'
+            className='bg-[#6F4E37] text-white dark:text-black border-neutral-200 dark:border-slate-800 w-full h-12 text-md font-semibold rounded-[10px]'
             type='submit'
           >
             {loading ? (
@@ -147,19 +141,20 @@ function SignUp() {
           </Button>
 
           <div className='bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full' />
-
-          <div className='flex justify-start gap-1 opacity-100'>
-            <span className='text-md font-normal text-black dark:text-white'>
-              Have an account?
-            </span>
-            <span
-              className='text-md font-normal text-blue-500 cursor-pointer'
-              onClick={() => navigate("/sign-in")}
-            >
-              Sign In
-            </span>
-          </div>
         </form>
+        <OAuth />
+        <div className='bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full' />
+        <div className='flex justify-start gap-1 opacity-100'>
+          <span className='text-md font-normal text-black dark:text-white'>
+            Have an account?
+          </span>
+          <span
+            className='text-md font-normal text-blue-500 cursor-pointer'
+            onClick={() => navigate("/sign-in")}
+          >
+            Sign In
+          </span>
+        </div>
       </div>
     </div>
   );

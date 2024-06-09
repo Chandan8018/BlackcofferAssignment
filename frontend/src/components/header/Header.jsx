@@ -14,6 +14,7 @@ import { toggleTheme } from "../../redux/theme/themeSlice";
 import { Button } from "../ui/moving-border";
 import { ImProfile } from "react-icons/im";
 import { signoutSuccess } from "../../redux/user/userSlice";
+import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input";
 
 function Header() {
   const path = useLocation().pathname;
@@ -21,20 +22,37 @@ function Header() {
   const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.theme);
   const { currentUser } = useSelector((state) => state.user);
+
   return (
     <Navbar
       fluid
       className='bg-gray-400 sticky md:top-3 md:mx-14 md:rounded-full opacity-85 z-40'
     >
-      <NavbarBrand href='https://flowbite-react.com'>
-        <span className='self-center whitespace-nowrap text-xl font-semibold dark:text-white md:pl-10'>
-          Blackcoffer™
-        </span>
+      <NavbarBrand>
+        <Link to='/'>
+          <span className='flex justify-start items-center whitespace-nowrap text-xl font-semibold dark:text-white pl-7'>
+            <span className='bg-black text-white rounded-xl rounded-tr-none rounded-br-none py-1 pl-2'>
+              Black
+            </span>{" "}
+            <span className='bg-[#6F4E37] text-white rounded-xl rounded-tl-none rounded-bl-none py-1 pr-2'>
+              coffer
+            </span>
+          </span>
+        </Link>
       </NavbarBrand>
+      <PlaceholdersAndVanishInput
+        placeholders={[
+          "What's the first rule of Fight Club?",
+          "Who is Tyler Durden?",
+          "Where is Andrew Laeddis Hiding?",
+          "Write a Javascript method to reverse a string",
+          "How to assemble your own PC?",
+        ]}
+      />
       <div className='flex gap-5 md:order-2 md:pr-10'>
         <Button
           borderRadius='1.75rem'
-          className='bg-tansparent text-black dark:text-white border-neutral-200 dark:border-slate-800 w-full mr-10'
+          className='bg-tansparent text-black dark:text-white border-neutral-200 dark:border-slate-800 w-full h-10 mr-10'
           onClick={() => dispatch(toggleTheme())}
         >
           {theme === "light" ? (
@@ -50,7 +68,7 @@ function Header() {
             label={
               <Avatar
                 alt='user'
-                img='https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg'
+                img={currentUser.profilePicture}
                 rounded
                 className='h-8 w-10'
               />
@@ -60,7 +78,7 @@ function Header() {
               <FaUserCheck className='w-10 h-10' color='navy' />
 
               <span className='block text-md font-bold text-black truncate'>
-                @{currentUser.firstname + " " + currentUser.lastname}
+                @{currentUser.username}
               </span>
               <span className='block text-sm font-medium text-black truncate'>
                 {currentUser.email}
@@ -102,10 +120,6 @@ function Header() {
       <NavbarCollapse>
         <NavbarLink active={path === "/"} as={"div"}>
           <Link to='/'>Home</Link>
-        </NavbarLink>
-
-        <NavbarLink active={path === "/service"} as={"div"}>
-          <Link to='/service'>Service</Link>
         </NavbarLink>
 
         <NavbarLink active={path === "/about"} as={"div"}>

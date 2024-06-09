@@ -19,22 +19,22 @@ function FooterComp() {
         <div className='grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1'>
           <div className='grid grid-cols-2 md:gap-0 sm:mt-4 md:grid-cols-5 gap-6 '>
             <div className='flex flex-col gap-6 mt-2'>
-              <div className='flex justify-start gap-1 items-center'>
-                <img
-                  src='https://media0.giphy.com/media/Dwv8Wl7vI1JUuOektL/giphy.gif?cid=6c09b952x6hnij1dfkt64jbuf8zpx3v426vavnvf92t0cfs1&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g'
-                  className='h-5 sm:h-9 rounded-lg'
-                  alt='Blackcoffer App Logo'
-                />
-                <span className='text-xl font-semibold dark:text-white'>
-                  ChainTech™
+              <div className='flex justify-start items-center'>
+                <span className='flex justify-start items-center whitespace-nowrap text-xl font-semibold dark:text-white pl-7'>
+                  <span className='bg-black text-white rounded-xl rounded-tr-none rounded-br-none py-1 pl-1'>
+                    Black
+                  </span>{" "}
+                  <span className='bg-[#6F4E37] text-white rounded-xl rounded-tl-none rounded-bl-none py-1 pr-1'>
+                    coffer™
+                  </span>
                 </span>
               </div>
               <span className='flex justify-start items-center gap-1 text-sm font-semibold'>
-                <IoMdMail className='w-6 h-6 text-[#ff5555]' />{" "}
-                Help@Blackcoffer.Com
+                <IoMdMail className='w-6 h-6 text-[#6F4E37]' />{" "}
+                Help@blackcoffer.Com
               </span>
               <span className='flex justify-start items-center gap-1 text-sm font-semibold'>
-                <IoCall className='w-6 h-6 text-[#ff5555]' />{" "}
+                <IoCall className='w-6 h-6 text-[#6F4E37]' />{" "}
                 +1234&nbsp;456&nbsp;67889
               </span>
             </div>
@@ -99,7 +99,7 @@ function FooterComp() {
                     />
                     <Button
                       borderRadius='4px'
-                      className='bg-black text-white border-slate-800 rounded-[3px]'
+                      className='bg-black text-white border-slate-800 rounded-[3px] h-10'
                     >
                       Subscribe
                     </Button>
@@ -113,7 +113,7 @@ function FooterComp() {
         <div className='w-full flex items-center justify-center'>
           <FooterCopyright
             href='#'
-            by='Blackcoffer.Com All Rights Reserved™'
+            by='ElectricBills.Com All Rights Reserved™'
             year={new Date().getFullYear()}
             className='text-black dark:text-white'
           />

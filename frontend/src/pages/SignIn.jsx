@@ -8,20 +8,19 @@ import { Word } from "../data/data";
 import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { selectUsers } from "../redux/user/userSlice";
 import {
   signInStart,
   signInSuccess,
   signInFailure,
 } from "../redux/user/userSlice";
 import { Alert, Spinner } from "flowbite-react";
+import OAuth from "../components/googleConfig/OAuth";
 
 function SignIn() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.theme);
   const userState = useSelector((state) => state.user);
-  const users = useSelector(selectUsers);
   const [formData, setFormData] = useState({});
 
   const { loading, error: errorMessage } = userState || {
@@ -32,33 +31,39 @@ function SignIn() {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+
     if (!formData.email || !formData.password) {
       return dispatch(signInFailure("Please fill out all fields"));
     }
+
     try {
       dispatch(signInStart());
-      const user = users.find(
-        (user) =>
-          user.email === formData.email && user.password === formData.password
-      );
 
-      if (user) {
-        dispatch(signInSuccess(user));
-        navigate("/dashboard?tab=dash");
-        setFormData({});
-      } else {
-        return dispatch(signInFailure("Invalid email or password"));
+      const res = await fetch("/api/auth/signin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success === false) {
+        //setErrorMessage(data.message)
+        dispatch(signInFailure(data.message));
+      }
+
+      if (res.ok) {
+        dispatch(signInSuccess(data));
+        navigate("/dashboard");
       }
     } catch (error) {
-      dispatch(signInFailure("Failed to sign in"));
-      console.log(error);
+      dispatch(signInFailure(error.message));
     }
   };
   return (
-    <div className='h-[50rem] w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex justify-center items-center'>
+    <div className='py-12 w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex justify-center items-center'>
       {/* Spot Light */}
       <Spotlight
         className='-top-40 left-0 md:left-60 md:-top-20 z-10'
@@ -80,7 +85,7 @@ function SignIn() {
             {errorMessage}
           </Alert>
         )}
-        <form className='my-8' onSubmit={handleSubmit}>
+        <form className='my-4' onSubmit={handleSubmit}>
           <LabelInputContainer className='mb-4'>
             <Label htmlFor='email'>Email Address</Label>
             <Input
@@ -102,8 +107,8 @@ function SignIn() {
           </LabelInputContainer>
 
           <Button
-            borderRadius='1.75rem'
-            className='bg-gray-600 dark:bg-slate-400 text-white dark:text-black border-neutral-200 dark:border-slate-800 w-full text-md font-semibold'
+            borderRadius='8px'
+            className='bg-[#6F4E37] text-white dark:text-black border-neutral-200 dark:border-slate-800 w-full h-12 text-md font-semibold rounded-[10px]'
             type='submit'
           >
             {loading ? (
@@ -118,18 +123,20 @@ function SignIn() {
           </Button>
 
           <div className='bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full' />
-          <div className='flex justify-start gap-1 opacity-100'>
-            <span className='text-md font-normal text-black dark:text-white'>
-              Don't have an account?
-            </span>
-            <span
-              className='text-md font-normal text-blue-600 cursor-pointer'
-              onClick={() => navigate("/sign-up")}
-            >
-              Sign Up
-            </span>
-          </div>
+          <OAuth />
         </form>
+        <div className='bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full' />
+        <div className='flex justify-start gap-1 opacity-100'>
+          <span className='text-md font-normal text-black dark:text-white'>
+            Don't have an account?
+          </span>
+          <span
+            className='text-md font-normal text-blue-600 cursor-pointer'
+            onClick={() => navigate("/sign-up")}
+          >
+            Sign Up
+          </span>
+        </div>
       </div>
     </div>
   );
