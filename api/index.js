@@ -7,6 +7,7 @@ import userRouters from "./routes/user.route.js";
 import authRouters from "./routes/auth.route.js";
 import dataRouters from "./routes/data.route.js";
 import cookieParser from "cookie-parser";
+import path from "path";
 
 dotenv.config();
 const port = 4000;
@@ -19,6 +20,7 @@ mongoose
     console.log(err);
   });
 
+const __dirname = path.resolve();
 const app = express();
 
 app.use(express.json());
@@ -43,7 +45,7 @@ const options = {
     },
     servers: [
       {
-        url: "https://localhost:7970",
+        url: "https://localhost:4000",
       },
     ],
   },
@@ -57,6 +59,11 @@ app.use("/api/user", userRouters);
 app.use("/api/auth", authRouters);
 app.use("/api/data", dataRouters);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specification));
+
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+});
 
 //Error-Handling Middleware
 app.use((err, req, res, next) => {
