@@ -10,7 +10,7 @@ import cookieParser from "cookie-parser";
 import path from "path";
 
 dotenv.config();
-const port = 4000;
+const port = 5000;
 mongoose
   .connect(process.env.MONGO)
   .then(() => {

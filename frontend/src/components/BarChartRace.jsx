@@ -563,7 +563,10 @@ const BarChartRace = () => {
     return (_, transition) => {
       g.transition(transition).call(axis);
       g.select(".tick:first-of-type text").remove();
-      g.selectAll(".tick:not(:first-of-type) line").attr("stroke", "white");
+      g.selectAll(".tick:not(:first-of-type) line").attr(
+        "stroke",
+        theme === "light" ? "white" : "#1a2027"
+      );
       g.select(".domain").remove();
     };
   };
@@ -603,7 +606,10 @@ const BarChartRace = () => {
           <h3 className='text-blue-600 text-xl text-center mt-5'>
             Comparing Intensity of Sectors, Regions, and Years
           </h3>
-          <svg ref={svgRef} className='mt-5 min-w-full w-[90vw]'></svg>
+          <svg
+            ref={svgRef}
+            className='mt-5 min-w-full w-[80vw] md:w-[90vw] pr-10 md:pr-0'
+          ></svg>
           {/* <div ref={controlRef} id='control' className='flex items-center'>
         <button id='playButton'> Play </button>
         <svg id='progress' width='800' height='50'>

@@ -138,6 +138,8 @@ export default function TableChart() {
         pageSizeOptions={[5]}
         checkboxSelection
         disableRowSelectionOnClick
+        className='text-black dark:bg-gray-500'
+        he
       />
     </Box>
   );

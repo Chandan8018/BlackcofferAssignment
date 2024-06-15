@@ -25,16 +25,24 @@ export default function DashboardComp() {
         const res = await fetch(`/api/data/getdata`);
         const newData = await res.json();
         if (res.ok) {
-          let sortedData = [...newData].sort(
+          const filterData = newData.filter(
+            (data) =>
+              data.likelihood !== null &&
+              data.relevance !== null &&
+              data.likelihood !== 0 &&
+              data.relevance !== 0 &&
+              data.topic !== ""
+          );
+          let sortedData = [...filterData].sort(
             (a, b) => b.relevance - a.relevance
           );
           let topTenObjects = sortedData.slice(0, 10);
           setTopRelevance(topTenObjects);
 
-          let sortedDataLikelihood = [...newData].sort(
+          let sortedDataLikelihood = [...filterData].sort(
             (a, b) => b.likelihood - a.likelihood
           );
-          let topTenLikelihoodObjects = sortedData.slice(0, 10);
+          let topTenLikelihoodObjects = sortedDataLikelihood.slice(0, 10);
           setTopLikelihood(topTenLikelihoodObjects);
         }
       } catch (error) {
@@ -90,7 +98,8 @@ export default function DashboardComp() {
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={12} sm={12} md={4} width={400} height={250}>
           <Item>
-            <div className='flex flex-col justify-center items-center gap-3 my-7'>
+            <div className='flex flex-col justify-center items-center gap-4 mb-7'>
+              <h1 className='mb-1'>Active Profile</h1>
               <StyledBadge
                 overlap='circular'
                 anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
@@ -112,8 +121,9 @@ export default function DashboardComp() {
             </div>
           </Item>
         </Grid>
-        <Grid item xs={12} sm={12} md={4}>
+        <Grid item xs={12} sm={12} md={4} className='mt-3 md:mt-0'>
           <Item className=''>
+            <h1>Top Relevance</h1>
             <LineChart
               width={400}
               height={250}
@@ -132,6 +142,7 @@ export default function DashboardComp() {
         </Grid>
         <Grid item xs={12} sm={12} md={4}>
           <Item>
+            <h1>Top Likelihood</h1>
             <BarChart
               width={400}
               height={250}
@@ -145,8 +156,12 @@ export default function DashboardComp() {
                 // { data: uData, label: "uv", id: "uvId", stack: "total" },
               ]}
               xAxis={[
-                { data: topLikelihood.map((d) => d.topic), scaleType: "band" },
+                {
+                  data: topLikelihood.map((d) => d.topic),
+                  scaleType: "band",
+                },
               ]}
+              colors={["#EEA6A8", "#82ca9d"]}
             />
           </Item>
         </Grid>
