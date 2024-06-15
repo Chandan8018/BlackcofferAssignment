@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import SideBarComp from "../components/dash/SideBarComp";
 import DashboardComp from "../components/dash/DashboardComp";
 import Profile from "../components/dash/Profile";
+import BarChartRace from "../components/BarChartRace";
+import TableChart from "../components/TableChart";
 
 export default function Dashboard() {
   const location = useLocation();
@@ -14,14 +16,16 @@ export default function Dashboard() {
   }, [location.search]);
   return (
     <>
-      <div className='min-h-screen flex flex-row'>
-        <div className=''>
+      <div className='min-h-screen flex items-start gap-1'>
+        <div className='mt-20'>
           {/* SideBar  */}
           <SideBarComp />
         </div>
 
         {tab === "dash" && <DashboardComp />}
         {tab === "profile" && <Profile />}
+        {tab === "race-bar" && <BarChartRace />}
+        {tab === "table-data" && <TableChart />}
       </div>
     </>
   );

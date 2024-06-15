@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const DataSchema = new mongoose.Schema(
+const dataSchema = new mongoose.Schema(
   {
     end_year: { type: String },
     intensity: { type: Number },
@@ -23,6 +23,6 @@ const DataSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Data = mongoose.model("Data", DataSchema);
+const Data = mongoose.model("Data", dataSchema);
 
-module.exports = Data;
+export default Data;

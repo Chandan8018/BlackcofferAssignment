@@ -16,7 +16,8 @@ function SideBarComp() {
   const location = useLocation();
   const [tab, setTab] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const { DashboardIcon, ProfileIcon } = SidebarIcons();
+  const { DashboardIcon, ProfileIcon, BarGraphIcon, TableGraphIcon } =
+    SidebarIcons();
 
   const handleClose = () => setIsOpen(false);
 
@@ -86,6 +87,26 @@ function SideBarComp() {
                           as='div'
                         >
                           Dashboard
+                        </Sidebar.Item>
+                      </Link>
+                      <Link to='/dashboard?tab=race-bar'>
+                        <Sidebar.Item
+                          active={tab === "race-bar"}
+                          icon={BarGraphIcon}
+                          className='cursor-pointer  hover:bg-[#6F4E37] hover:dark:bg-[#6F4E37] hover:text-white hover:text-md hover:opacity-85 rounded-lg w-48 mb-4'
+                          as='div'
+                        >
+                          Race Bar Chart
+                        </Sidebar.Item>
+                      </Link>
+                      <Link to='/dashboard?tab=table-data'>
+                        <Sidebar.Item
+                          active={tab === "table-data"}
+                          icon={TableGraphIcon}
+                          className='cursor-pointer  hover:bg-[#6F4E37] hover:dark:bg-[#6F4E37] hover:text-white hover:text-md hover:opacity-85 rounded-lg w-48 mb-4'
+                          as='div'
+                        >
+                          Table Data
                         </Sidebar.Item>
                       </Link>
                       <Link to='/dashboard?tab=profile'>

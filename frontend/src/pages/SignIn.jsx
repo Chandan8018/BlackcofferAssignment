@@ -15,6 +15,7 @@ import {
 } from "../redux/user/userSlice";
 import { Alert, Spinner } from "flowbite-react";
 import OAuth from "../components/googleConfig/OAuth";
+import ApiData from "../data/ApiData";
 
 function SignIn() {
   const navigate = useNavigate();
@@ -57,6 +58,7 @@ function SignIn() {
       if (res.ok) {
         dispatch(signInSuccess(data));
         navigate("/dashboard");
+        ApiData();
       }
     } catch (error) {
       dispatch(signInFailure(error.message));

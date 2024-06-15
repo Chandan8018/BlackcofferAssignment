@@ -1,0 +1,312 @@
+date,name,value,category
+2017-01-08,Energy,6,Northern America
+2017-01-08,Energy,6,Northern America
+2017-01-08,Energy,6,Northern America
+2017-01-17,Environment,6,Central America
+2017-01-17,,6,World
+2017-01-17,Energy,6,World
+2017-01-12,Government,60,
+2017-01-15,Energy,16,World
+2017-01-15,,16,Western Africa
+2017-01-06,Aerospace & defence,6,Western Asia
+2017-01-16,Manufacturing,4,Northern America
+2017-01-16,Retail,6,Northern America
+2017-01-15,Energy,6,
+2017-01-15,Energy,6,
+2017-01-16,Energy,12,Eastern Europe
+2017-01-13,Energy,16,World
+2017-01-09,Energy,9,
+2017-01-15,Financial services,16,World
+2017-01-10,Aerospace & defence,4,World
+2017-01-10,Energy,8,Western Asia
+2017-01-12,Financial services,8,Central Africa
+2017-01-12,,16,World
+2017-01-12,Support services,16,
+2017-01-14,,24,Northern America
+2017-01-11,Energy,16,World
+2017-01-11,Energy,6,World
+2017-01-07,Energy,6,Northern Africa
+2017-01-11,Energy,6,Northern America
+2017-01-14,,6,World
+2017-08-31,Information Technology,72,World
+2017-01-10,Energy,12,
+2017-01-09,Energy,6,Southern Africa
+2017-01-09,,16,Southern Asia
+2017-01-09,,16,Western Asia
+2017-01-09,,8,Eastern Europe
+2017-01-09,,8,Central Asia
+2017-01-10,Energy,4,World
+2017-01-10,,12,World
+2017-01-10,Healthcare,18,
+2017-01-10,Energy,16,Northern America
+2017-01-10,Energy,16,Northern America
+2017-01-10,Energy,16,Northern America
+2017-01-10,Energy,16,Northern America
+2017-01-10,Energy,16,Northern America
+2017-01-10,Energy,16,Northern America
+2017-01-10,Energy,20,Northern America
+2017-01-10,Energy,16,Northern America
+2017-01-10,Energy,6,World
+2017-01-10,Energy,12,
+2017-01-10,Energy,16,Northern America
+2017-01-10,Energy,6,Northern America
+2017-01-10,Energy,12,
+2017-01-10,Energy,6,Northern America
+2017-01-10,Energy,16,Northern America
+2017-01-10,,8,
+2017-01-10,Energy,16,
+2017-01-10,Energy,16,World
+2017-01-10,Energy,6,Northern America
+2017-01-10,Energy,16,World
+2017-01-10,Aerospace & defence,6,Eastern Asia
+2017-01-10,Energy,16,World
+2017-01-10,Energy,6,Northern America
+2017-01-10,Energy,8,
+2017-01-10,Energy,4,Northern America
+2017-01-10,Energy,16,Northern America
+2017-01-10,Energy,12,
+2017-01-08,Energy,12,
+2017-01-03,Energy,4,Northern America
+2017-01-08,Energy,4,Eastern Europe
+2017-01-10,Retail,16,World
+2017-01-02,,8,South America
+2017-01-08,Energy,9,Western Africa
+2017-01-08,,6,
+2016-12-26,Manufacturing,6,Northern Africa
+2017-01-06,Information Technology,6,
+2017-01-04,Energy,6,
+2016-12-29,Support services,6,Northern America
+2016-12-05,Energy,16,World
+2016-01-18,Energy,4,Eastern Europe
+2016-12-31,Financial services,20,Northern America
+2016-12-31,Energy,12,
+2017-03-31,Aerospace & defence,6,
+2016-12-31,Energy,6,Northern America
+2017-01-08,Aerospace & defence,6,World
+2016-07-30,,6,Western Africa
+2016-11-29,,6,Western Asia
+2016-11-29,Energy,6,South-Eastern Asia
+2016-11-29,Energy,8,Western Asia
+2016-11-29,Energy,8,Southern Asia
+2016-11-29,Energy,9,Southern Asia
+2016-11-29,Energy,8,Western Asia
+2017-01-07,,4,Eastern Asia
+2016-08-22,Support services,12,
+2016-08-22,,12,
+2016-12-31,Support services,9,Northern America
+2016-12-08,Retail,12,
+2016-12-08,Energy,12,
+2016-12-08,,12,Northern America
+2016-10-25,,16,
+2016-12-13,,12,
+2016-12-13,Financial services,9,South-Eastern Asia
+2017-01-02,Food & agriculture,4,Eastern Africa
+2017-01-03,Financial services,6,Northern America
+2017-01-03,,12,
+2017-01-05,Energy,16,Northern America
+2017-01-05,,24,Northern America
+2017-01-05,,12,Eastern Asia
+2017-01-05,Energy,16,Northern America
+2017-01-05,Energy,6,Northern America
+2017-01-05,,6,South America
+2017-01-04,Energy,12,
+2017-01-01,Energy,12,
+2017-01-01,Energy,12,
+2016-11-15,Retail,6,
+2017-01-03,,4,Europe
+2016-12-31,Aerospace & defence,4,Western Africa
+2016-12-07,Energy,12,
+2017-01-05,Energy,8,World
+2017-01-06,Energy,9,Western Asia
+2017-01-05,Energy,16,Northern America
+2017-01-05,Energy,6,Northern America
+2017-01-04,Energy,8,Northern America
+2017-01-04,Retail,9,
+2017-01-04,Aerospace & defence,12,
+2017-01-03,Energy,6,
+2017-01-02,Automotive,6,
+2017-01-03,Tourism & hospitality,12,
+2017-01-03,Information Technology,12,
+2017-01-02,Energy,8,
+2017-01-03,Aerospace & defence,8,Western Europe
+2017-01-03,Energy,16,Western Europe
+2017-01-01,Energy,4,
+2017-01-01,Energy,4,Eastern Asia
+2017-01-02,Energy,20,
+2017-01-02,,16,Southern Asia
+2016-10-17,Aerospace & defence,12,
+2016-12-27,Energy,20,
+2016-12-30,Financial services,12,
+2017-01-01,,12,Northern Africa
+2016-12-29,Energy,8,World
+2016-12-04,Financial services,8,Northern America
+2016-12-30,Retail,6,
+2016-12-30,Aerospace & defence,16,Eastern Europe
+2016-12-21,,9,
+2016-12-29,Energy,6,Eastern Asia
+2016-12-22,Energy,4,Northern Europe
+2016-12-18,Energy,9,
+2016-10-16,Energy,12,
+2016-10-16,Energy,16,Northern America
+2016-12-24,,4,Western Asia
+2016-12-21,Energy,6,
+2016-12-21,Energy,9,Northern America
+2016-12-21,Energy,16,World
+2016-12-21,Support services,9,World
+2016-12-14,Energy,6,Northern America
+2016-12-14,,12,
+2016-12-14,,16,World
+2016-03-21,Energy,12,
+2016-12-15,,6,
+2016-06-07,Government,12,
+2016-12-19,,12,
+2016-12-19,Energy,6,
+2016-12-18,Government,2,Eastern Asia
+2016-12-18,Energy,6,Eastern Europe
+2016-12-18,Financial services,6,Eastern Europe
+2016-12-21,,6,Northern America
+2016-12-13,Energy,40,
+2016-12-18,Financial services,12,
+2016-12-08,,6,Northern America
+2016-12-16,Support services,4,Northern Africa
+2016-12-19,Environment,6,World
+2016-12-19,Energy,6,Northern America
+2016-06-21,,12,
+2016-12-19,Energy,6,Northern America
+2016-12-20,Aerospace & defence,12,
+2016-12-20,Energy,6,Northern Africa
+2016-12-20,Manufacturing,8,
+2016-12-20,Manufacturing,4,
+2016-12-20,Financial services,4,
+2016-12-18,Energy,12,
+2016-12-19,Government,6,Western Asia
+2016-12-18,Energy,12,World
+2016-12-14,,6,Eastern Asia
+2016-12-19,Aerospace & defence,6,World
+2016-12-19,Energy,12,World
+2016-12-19,Energy,16,World
+2016-12-17,Financial services,16,Northern Africa
+2016-12-12,Manufacturing,6,
+2016-12-14,Energy,16,
+2016-12-15,Energy,6,Northern America
+2016-12-13,,12,Europe
+2016-12-12,Energy,6,
+2016-12-14,Energy,6,World
+2016-12-08,Information Technology,16,
+2016-12-13,Energy,16,
+2016-12-13,,6,Northern America
+2016-12-13,,6,
+2016-12-11,,8,
+2016-12-11,Retail,32,Northern America
+2016-12-11,,8,Northern America
+2016-12-15,Energy,4,South America
+2016-12-08,Energy,4,Central America
+2016-12-15,Energy,12,
+2016-12-12,Energy,16,World
+2016-12-13,Energy,6,Northern America
+2016-11-30,Energy,12,
+2016-06-26,Automotive,6,
+2016-04-11,Construction,12,
+2016-04-11,Energy,16,World
+2016-01-18,Energy,6,World
+2016-01-18,Energy,6,World
+2016-01-18,,16,Southern Asia
+2016-01-18,Financial services,6,Eastern Asia
+2016-01-18,Financial services,6,Northern America
+2016-01-18,,16,World
+2016-12-12,Energy,6,
+2016-01-26,,12,
+2016-01-26,Retail,6,Southern Asia
+2016-01-26,Government,16,Western Europe
+2016-01-26,,16,Southern Europe
+2016-01-26,Retail,4,Northern Europe
+2016-01-26,Energy,12,
+2016-01-26,Retail,16,Northern America
+2016-12-13,Energy,20,World
+2016-12-08,,16,
+2016-12-15,Food & agriculture,20,South-Eastern Asia
+2016-12-17,Manufacturing,12,
+2016-12-17,Energy,9,
+2016-12-11,Energy,12,
+2016-12-12,Retail,12,
+2016-12-11,Energy,16,
+2016-12-11,Energy,12,World
+2016-12-11,Environment,4,
+2016-12-13,Government,9,Northern Africa
+2016-12-17,,9,Northern America
+2016-12-12,,6,World
+2016-12-15,Support services,6,
+2016-11-28,Energy,12,
+2016-12-15,Energy,8,Europe
+2016-12-15,Energy,6,Western Africa
+2016-12-11,Manufacturing,12,
+2016-12-15,,12,
+2016-12-15,Energy,12,
+2016-12-13,Energy,6,Eastern Europe
+2016-12-14,Energy,8,World
+2016-12-15,Financial services,8,
+2016-12-08,Energy,16,World
+2016-12-11,Energy,12,
+2016-12-11,Energy,8,World
+2016-12-13,Manufacturing,12,
+2016-12-12,Energy,24,
+2016-12-12,,8,World
+2016-11-30,Energy,8,Oceania
+2016-12-08,Manufacturing,6,Eastern Europe
+2016-12-05,Energy,9,Europe
+2016-12-10,Energy,14,Northern America
+2016-12-07,,12,
+2016-12-07,,12,
+2016-12-09,Energy,16,World
+2016-12-09,,20,World
+2016-11-30,Energy,16,
+2016-12-06,Aerospace & defence,16,Europe
+2016-12-06,Energy,6,Africa
+2016-12-06,,6,Africa
+2016-11-29,Energy,6,Northern America
+2016-12-07,Energy,6,Northern America
+2016-12-02,Manufacturing,9,
+2016-12-05,Energy,20,
+2016-12-03,Automotive,10,World
+2016-12-04,Energy,16,World
+2016-12-04,Energy,12,
+2016-12-04,Energy,12,Europe
+2016-12-01,,8,
+2016-12-01,Financial services,16,Southern Asia
+2016-12-01,,4,
+2016-01-27,Financial services,72,Southern Asia
+2016-01-13,Energy,16,Eastern Asia
+2016-11-21,Aerospace & defence,20,Northern America
+2015-12-07,Financial services,6,
+2015-12-07,Energy,6,
+2015-12-07,Financial services,12,
+2016-06-16,Energy,6,
+2015-12-09,Energy,6,Oceania
+2016-11-30,Energy,6,
+2016-01-17,Government,6,Eastern Asia
+2016-11-07,Energy,24,
+2016-12-01,Manufacturing,48,Northern America
+2016-12-02,Retail,6,Western Asia
+2016-12-02,Energy,8,
+2016-11-28,,12,Oceania
+2016-12-01,Information Technology,6,Northern America
+2016-11-30,Support services,12,
+2016-04-02,Retail,6,
+2016-04-02,Financial services,12,
+2016-11-29,,16,
+2016-11-29,Energy,6,Eastern Asia
+2016-11-02,Construction,16,
+2016-11-29,Energy,6,World
+2016-11-27,Environment,4,
+2016-11-29,Energy,6,World
+2016-11-29,Retail,9,Asia
+2016-11-27,Energy,16,
+2016-11-27,Energy,6,
+2016-11-21,Energy,4,
+2016-02-24,,12,Northern America
+2016-02-24,Energy,12,
+2016-11-06,Energy,4,Southern Asia
+2016-11-22,Retail,9,Northern Africa
+2016-11-17,,12,Southern Asia
+2016-11-20,Energy,3,Western Africa
+2016-11-19,Energy,4,Western Asia

@@ -5,10 +5,11 @@ import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUI from "swagger-ui-express";
 import userRouters from "./routes/user.route.js";
 import authRouters from "./routes/auth.route.js";
+import dataRouters from "./routes/data.route.js";
 import cookieParser from "cookie-parser";
 
 dotenv.config();
-const port = 7970;
+const port = 4000;
 mongoose
   .connect(process.env.MONGO)
   .then(() => {
@@ -54,6 +55,7 @@ const specification = swaggerJSDoc(options);
 
 app.use("/api/user", userRouters);
 app.use("/api/auth", authRouters);
+app.use("/api/data", dataRouters);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specification));
 
 //Error-Handling Middleware
