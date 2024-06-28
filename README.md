@@ -22,13 +22,20 @@ Welcome to the BlackCoffer Assignment project! This project is designed to showc
 
 ## Demo
 
-![Home Page](./src/assets/home.png)
+![Home Page](./frontend/public/home.png)
 ---
-![Sign Up](./src/assets/signup.png)
+![Sign Up](./frontend/public/Signup.png)
 ---
-![Sign In](./src/assets/signin.png)
+![Sign In](./frontend/public/Signin.png)
 ---
-![Update](./src/assets/update.png)
+![Dashboard](./frontend/public/dashboard.png)
+---
+![BarChartRace](./frontend/public/barchartrace.png)
+---
+![Tabular Data](./frontend/public/TableData.png)
+---
+![Profile Update](./frontend/public/profile.png)
+---
 
 
 
@@ -39,22 +46,32 @@ To run this project locally, follow these steps:
 1. **Clone the repository**:
     ```sh
     git clone https://github.com/yourusername/chaintechassignment.git
-    cd chaintechassignment
+   
     ```
 
-2. **Install dependencies**:
+2. **Install dependencies for backend**:
     ```sh
     npm install
     ```
 
-3. **Start the development server**:
+2. **Start the backend server**:
+    ```sh
+    npm run dev
+    ```
+
+3. **Install dependencies for frontend**:
+    ```sh
+    cd frontend
+    npm install
+    ```
+4. **Start the backend server**:
     ```sh
     npm run dev
     ```
 
 ## Usage
 
-Once the server is running, you can visit the application at `http://localhost:3000`. You can navigate through different pages such as Home, Services, About, Contact, Sign In, and Sign Up. Authenticated users can access the Dashboard.
+Once the server is running, you can visit the application at `http://localhost:7979`. You can navigate through different pages such as Home, Services, About, Contact, Sign In, and Sign Up. Authenticated users can access the Dashboard.
 
 ### Home Page
 
