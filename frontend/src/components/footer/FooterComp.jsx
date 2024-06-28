@@ -98,7 +98,7 @@ function FooterComp() {
                       className='rounded-none'
                     />
                     <Button
-                      borderRadius='4px'
+                      borderRadius='3px'
                       className='bg-black text-white border-slate-800 rounded-[3px] h-10'
                     >
                       Subscribe
